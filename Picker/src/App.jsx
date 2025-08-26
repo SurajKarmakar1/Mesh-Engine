@@ -7,7 +7,7 @@ function GradientPreview({ gradient, isGenerating, previewRef, children }) {
   return (
     <div
       ref={previewRef}
-      className="relative rounded-lg overflow-hidden border border-gray-800 shadow-lg h-full w-full bg-black" // Vercel dark: bg-black, border-gray-800
+      className="relative rounded-lg overflow-hidden border border-gray-800 shadow-lg h-full w-full bg-black"
     >
       {/* Base Gradient */}
       <div className="absolute inset-0" style={gradient} />
@@ -18,10 +18,7 @@ function GradientPreview({ gradient, isGenerating, previewRef, children }) {
 
       {isGenerating && (
         <div className="absolute inset-0 flex items-center justify-center bg-black/40">
-          {" "}
-          {/* Darker overlay */}
-          <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>{" "}
-          {/* Vercel blue */}
+          <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
         </div>
       )}
     </div>
@@ -43,15 +40,11 @@ function GradientCode({ gradient }) {
 
   return (
     <div className="bg-gray-950/50 backdrop-blur-sm rounded-lg border border-gray-800 overflow-hidden">
-      {" "}
-      {/* Darker bg, border-gray-800 */}
       <div className="px-3.5 py-2.5 border-b border-gray-800 flex justify-between items-center">
-        {" "}
-        {/* Border matches */}
         <div className="text-sm font-medium text-gray-200">CSS Output</div>
         <button
           onClick={copyToClipboard}
-          className="text-xs bg-gray-900 hover:bg-gray-800 text-gray-200 px-2.5 py-1 rounded transition-colors flex items-center border border-gray-800" // Button style
+          className="text-xs bg-gray-900 hover:bg-gray-800 text-gray-200 px-2.5 py-1 rounded transition-colors flex items-center border border-gray-800"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -72,8 +65,6 @@ function GradientCode({ gradient }) {
       </div>
       <div className="p-3.5">
         <pre className="text-xs bg-gray-950/80 text-gray-300 p-3 rounded overflow-x-auto border border-gray-800">
-          {" "}
-          {/* Darker pre bg */}
           <code>{codeString}</code>
         </pre>
       </div>
@@ -85,12 +76,10 @@ function GradientCode({ gradient }) {
 function DownloadPanel({ onDownloadPNG, isDownloading }) {
   return (
     <div className="bg-gray-950/50 backdrop-blur-sm rounded-lg border border-gray-800 shadow-lg p-5">
-      {" "}
-      {/* Darker bg, border-gray-800 */}
       <h2 className="text-base font-semibold text-gray-100 mb-3.5 flex items-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-4 w-4 mr-2 text-green-500" // Vercel green
+          className="h-4 w-4 mr-2 text-green-500"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -108,7 +97,7 @@ function DownloadPanel({ onDownloadPNG, isDownloading }) {
         <button
           onClick={onDownloadPNG}
           disabled={isDownloading}
-          className="w-full py-2 px-3 rounded-md font-medium transition-all flex items-center justify-center bg-gray-900 hover:bg-gray-800 border border-gray-800 text-gray-100 text-sm" // Button style
+          className="w-full py-2 px-3 rounded-md font-medium transition-all flex items-center justify-center bg-gray-900 hover:bg-gray-800 border border-gray-800 text-gray-100 text-sm"
         >
           {isDownloading ? (
             <>
@@ -178,12 +167,10 @@ function TextEditorPanel({
 }) {
   return (
     <div className="bg-gray-950/50 backdrop-blur-sm rounded-lg border border-gray-800 shadow-lg p-5">
-      {" "}
-      {/* Darker bg, border-gray-800 */}
       <h2 className="text-base font-semibold text-gray-100 mb-3.5 flex items-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-4 w-4 mr-2 text-yellow-500" // Vercel yellow/orange
+          className="h-4 w-4 mr-2 text-yellow-500"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -206,7 +193,7 @@ function TextEditorPanel({
           <textarea
             value={text}
             onChange={(e) => setText(e.target.value)}
-            className="w-full bg-gray-900 border border-gray-800 rounded-md px-3 py-2 text-gray-100 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 resize-none" // Input style
+            className="w-full bg-gray-900 border border-gray-800 rounded-md px-3 py-2 text-gray-100 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 resize-none"
             rows="3"
             placeholder="Enter your text here..."
           />
@@ -223,7 +210,7 @@ function TextEditorPanel({
             max="100"
             value={fontSize}
             onChange={(e) => setFontSize(Number(e.target.value))}
-            className="w-full h-1.5 bg-gray-800 rounded-lg appearance-none cursor-pointer accent-blue-500" // Slider style
+            className="w-full h-1.5 bg-gray-800 rounded-lg appearance-none cursor-pointer accent-blue-500"
           />
         </div>
 
@@ -237,8 +224,8 @@ function TextEditorPanel({
               onClick={() => setIsBold(!isBold)}
               className={`px-2.5 py-1.5 text-xs rounded transition-colors ${
                 isBold
-                  ? "bg-blue-600 text-white border border-blue-500" // Active state - Vercel blue
-                  : "bg-gray-900 text-gray-300 hover:bg-gray-800 border border-gray-800" // Default state
+                  ? "bg-blue-600 text-white border border-blue-500"
+                  : "bg-gray-900 text-gray-300 hover:bg-gray-800 border border-gray-800"
               }`}
             >
               Bold
@@ -247,8 +234,8 @@ function TextEditorPanel({
               onClick={() => setIsItalic(!isItalic)}
               className={`px-2.5 py-1.5 text-xs rounded transition-colors ${
                 isItalic
-                  ? "bg-blue-600 text-white border border-blue-500" // Active state - Vercel blue
-                  : "bg-gray-900 text-gray-300 hover:bg-gray-800 border border-gray-800" // Default state
+                  ? "bg-blue-600 text-white border border-blue-500"
+                  : "bg-gray-900 text-gray-300 hover:bg-gray-800 border border-gray-800"
               }`}
             >
               Italic
@@ -266,13 +253,13 @@ function TextEditorPanel({
               type="color"
               value={textColor}
               onChange={(e) => setTextColor(e.target.value)}
-              className="w-8 h-8 border border-gray-800 rounded cursor-pointer bg-gray-900" // Color picker style
+              className="w-8 h-8 border border-gray-800 rounded cursor-pointer bg-gray-900"
             />
             <span className="text-gray-400 text-xs">{textColor}</span>
           </div>
         </div>
 
-        {/* Text Position Info (Read-only for now, draggable on canvas) */}
+        {/* Text Position Info */}
         <div>
           <label className="block text-xs font-medium text-gray-400 mb-1">
             Position (Drag text on preview)
@@ -288,8 +275,8 @@ function TextEditorPanel({
           disabled={!text}
           className={`w-full py-2 px-3 rounded-md font-medium transition-colors flex items-center justify-center text-sm ${
             text
-              ? "bg-red-900/50 hover:bg-red-800/50 text-red-300 border border-red-800/50" // Active - Vercel red
-              : "bg-gray-900 text-gray-600 cursor-not-allowed border border-gray-800" // Disabled
+              ? "bg-red-900/50 hover:bg-red-800/50 text-red-300 border border-red-800/50"
+              : "bg-gray-900 text-gray-600 cursor-not-allowed border border-gray-800"
           }`}
         >
           <svg
@@ -317,12 +304,10 @@ function TextEditorPanel({
 function ControlPanel({ onGenerate, isGenerating }) {
   return (
     <div className="bg-gray-950/50 backdrop-blur-sm rounded-lg border border-gray-800 shadow-lg p-5">
-      {" "}
-      {/* Darker bg, border-gray-800 */}
       <h2 className="text-base font-semibold text-gray-100 mb-3.5 flex items-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-4 w-4 mr-2 text-blue-500" // Vercel blue
+          className="h-4 w-4 mr-2 text-blue-500"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -349,8 +334,8 @@ function ControlPanel({ onGenerate, isGenerating }) {
           w-full py-3 px-3 rounded-md font-medium transition-all flex items-center justify-center text-sm
           ${
             isGenerating
-              ? "bg-gray-900 text-gray-500 cursor-not-allowed border border-gray-800" // Disabled state
-              : "bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:opacity-90 active:scale-[0.98] shadow-md border border-blue-500/30" // Active state - Vercel-like gradient
+              ? "bg-gray-900 text-gray-500 cursor-not-allowed border border-gray-800"
+              : "bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:opacity-90 active:scale-[0.98] shadow-md border border-blue-500/30"
           }
         `}
       >
@@ -399,8 +384,6 @@ function ControlPanel({ onGenerate, isGenerating }) {
         )}
       </button>
       <div className="mt-5 pt-4 border-t border-gray-800">
-        {" "}
-        {/* Border matches */}
         <h3 className="text-xs font-medium text-gray-500 mb-1.5 flex items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -431,12 +414,11 @@ function ControlPanel({ onGenerate, isGenerating }) {
 function HistoryItem({ gradient, onClick }) {
   return (
     <div
-      className="rounded-md overflow-hidden border border-gray-800 cursor-pointer hover:border-blue-500/30 transition-all h-16 relative group bg-black" // Dark bg, border
+      className="rounded-md overflow-hidden border border-gray-800 cursor-pointer hover:border-blue-500/30 transition-all h-16 relative group bg-black"
       onClick={onClick}
     >
       <div className="absolute inset-0" style={gradient}></div>
-      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all"></div>{" "}
-      {/* Subtle overlay */}
+      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all"></div>
       <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -461,12 +443,10 @@ function HistoryItem({ gradient, onClick }) {
 function HistoryPanel({ history, onApply }) {
   return (
     <div className="bg-gray-950/50 backdrop-blur-sm rounded-lg border border-gray-800 shadow-lg p-5">
-      {" "}
-      {/* Darker bg, border-gray-800 */}
       <h2 className="text-base font-semibold text-gray-100 mb-3.5 flex items-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-4 w-4 mr-2 text-purple-500" // Vercel purple
+          className="h-4 w-4 mr-2 text-purple-500"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -502,8 +482,6 @@ function HistoryPanel({ history, onApply }) {
         </div>
       ) : (
         <div className="grid grid-cols-3 gap-2">
-          {" "}
-          {/* Smaller gap */}
           {history.map((gradient, index) => (
             <HistoryItem
               key={index}
@@ -609,23 +587,61 @@ export default function App() {
     }
   };
 
+  // Drag handling functions
+  const handleDragStart = (e) => {
+    e.preventDefault();
+    if (!previewRef.current) return;
+
+    let isDragging = true;
+
+    const getCoordinates = (event) => {
+      if (event.type.includes("touch")) {
+        const touch = event.touches[0] || event.changedTouches[0];
+        const rect = previewRef.current.getBoundingClientRect();
+        return {
+          x: touch.clientX - rect.left,
+          y: touch.clientY - rect.top,
+        };
+      } else {
+        const rect = previewRef.current.getBoundingClientRect();
+        return {
+          x: event.clientX - rect.left,
+          y: event.clientY - rect.top,
+        };
+      }
+    };
+
+    const handleDragMove = (moveEvent) => {
+      if (!isDragging || !previewRef.current) return;
+      const { x, y } = getCoordinates(moveEvent);
+      setTextPosition({ x, y });
+    };
+
+    const handleDragEnd = () => {
+      isDragging = false;
+      document.removeEventListener("mousemove", handleDragMove);
+      document.removeEventListener("mouseup", handleDragEnd);
+      document.removeEventListener("touchmove", handleDragMove);
+      document.removeEventListener("touchend", handleDragEnd);
+    };
+
+    document.addEventListener("mousemove", handleDragMove);
+    document.addEventListener("mouseup", handleDragEnd);
+    document.addEventListener("touchmove", handleDragMove, { passive: false });
+    document.addEventListener("touchend", handleDragEnd);
+  };
+
   useEffect(() => {
     generateMeshGradient();
   }, []);
 
   return (
     <div className="min-h-screen bg-gray-950 text-gray-100 font-sans">
-      {" "}
-      {/* Overall dark background */}
       <header className="border-b border-gray-800 bg-black/80 backdrop-blur-sm sticky top-0 z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-14 items-center">
-            {" "}
-            {/* Slightly shorter header */}
             <div className="flex items-center">
               <div className="bg-gradient-to-r from-purple-600 to-pink-600 w-7 h-7 rounded-md flex items-center justify-center">
-                {" "}
-                {/* Smaller logo */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-4 w-4 text-white"
@@ -634,15 +650,11 @@ export default function App() {
                 ></svg>
               </div>
               <h1 className="ml-2.5 text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
-                {" "}
-                {/* Smaller text */}
                 Mesh Engine
               </h1>
             </div>
             <div className="text-xs text-gray-500 flex items-center">
               <span className="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium bg-purple-900/30 text-purple-400 border border-purple-800/30">
-                {" "}
-                {/* Tag style */}
                 Static Mode
               </span>
             </div>
@@ -650,17 +662,9 @@ export default function App() {
         </div>
       </header>
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-7 w-full">
-        {" "}
-        {/* Adjusted padding */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 w-full">
-          {" "}
-          {/* Smaller gap */}
           <div className="lg:col-span-2 space-y-5 w-full">
-            {" "}
-            {/* Smaller vertical space */}
             <div className="h-[480px] w-full">
-              {" "}
-              {/* Adjusted height */}
               <GradientPreview
                 gradient={gradient}
                 isGenerating={isGenerating}
@@ -668,7 +672,7 @@ export default function App() {
               >
                 {text && (
                   <div
-                    className="absolute cursor-move select-none"
+                    className="absolute cursor-move select-none touch-none"
                     style={{
                       left: `${textPosition.x}px`,
                       top: `${textPosition.y}px`,
@@ -680,31 +684,12 @@ export default function App() {
                       whiteSpace: "pre-wrap",
                       maxWidth: "90%",
                       wordBreak: "break-word",
+                      userSelect: "none",
+                      WebkitUserSelect: "none",
+                      touchAction: "none",
                     }}
-                    onMouseDown={(e) => {
-                      if (e.button !== 0) return;
-                      e.preventDefault();
-                      if (!previewRef.current) return;
-
-                      const handleMouseMove = (moveEvent) => {
-                        if (!previewRef.current) return;
-                        const rect = previewRef.current.getBoundingClientRect();
-                        const newX = moveEvent.clientX - rect.left;
-                        const newY = moveEvent.clientY - rect.top;
-                        setTextPosition({ x: newX, y: newY });
-                      };
-
-                      const handleMouseUp = () => {
-                        document.removeEventListener(
-                          "mousemove",
-                          handleMouseMove
-                        );
-                        document.removeEventListener("mouseup", handleMouseUp);
-                      };
-
-                      document.addEventListener("mousemove", handleMouseMove);
-                      document.addEventListener("mouseup", handleMouseUp);
-                    }}
+                    onMouseDown={handleDragStart}
+                    onTouchStart={handleDragStart}
                   >
                     {text}
                   </div>
@@ -714,8 +699,6 @@ export default function App() {
             <GradientCode gradient={gradient} />
           </div>
           <div className="space-y-5">
-            {" "}
-            {/* Smaller vertical space */}
             <ControlPanel
               onGenerate={generateMeshGradient}
               isGenerating={isGenerating}

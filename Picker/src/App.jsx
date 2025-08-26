@@ -24,17 +24,6 @@ function GradientPreview({ gradient, isGenerating, previewRef, children }) {
           {/* Vercel blue */}
         </div>
       )}
-
-      {/* Preview Info - Vercel Style */}
-      <div className="absolute bottom-3 left-3 bg-black/60 backdrop-blur-md rounded-md px-2.5 py-1.5 z-10 border border-gray-800">
-        {" "}
-        {/* Darker bg, border */}
-        <div className="text-white text-xs font-medium flex items-center">
-          <div className={`w-2 h-2 rounded-full mr-1.5 bg-blue-500`}></div>{" "}
-          {/* Vercel blue dot */}
-          Static Preview
-        </div>
-      </div>
     </div>
   );
 }
